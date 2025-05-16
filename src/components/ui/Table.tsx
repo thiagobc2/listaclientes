@@ -29,7 +29,7 @@ const Table = ({ clientes, isLoading }: TableProps) => {
               <th
                 key={title}
                 className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-muted"
-              >d
+              >
                 {title}
               </th>
             ))}
