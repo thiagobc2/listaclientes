@@ -1,21 +1,94 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #2c313e;
+  --foreground: #ffffff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  /* Brand Colors  */
+  --color-brand-primary: oklch(0.74 0.09 184);
+  --color-brand-secondary: oklch(0.48 0.07 180);
+  --color-brand-tertiary: oklch(0.4 0.045 180);
+
+  /* Semantic Colors */
+  --color-success: oklch(0.65 0.09 150);
+  --color-danger: oklch(0.58 0.08 27);
+  --color-warning: oklch(0.82 0.05 85);
+  --color-info: oklch(0.7 0.03 280);
+  --color-new: oklch(0.5 0.015 250);
+
+  /* Neutral / Theming */
+  --color-surface: oklch(0.3 0.01 250); /* #13141b */
+  --color-surface-variant: oklch(0.4 0.02 250); /* #2c313e */
+  --color-outline: oklch(0.5 0.01 250); /* #646d71 */
+
+  --color-border: oklch(0.25 0.01 250); /* Aproximadamente #252426 */
+  --color-muted: oklch(0.6 0.03 270); /* #cdc4ca */
+  --color-background: var(--color-surface);
+  --color-text: oklch(0.9 0.01 250); /* branco */
+
+  /* Aliases */
+  --color-primary: var(--color-brand-primary);
+  --color-secondary: var(--color-brand-secondary);
+  --color-tertiary: var(--color-brand-tertiary);
+
+  /* Tipografia */
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Montserrat", sans-serif;
+
+  --font-size-xs: clamp(0.75rem, 1vw, 0.875rem);
+  --font-size-sm: clamp(0.875rem, 1.2vw, 1rem);
+  --font-size-md: clamp(1rem, 1.5vw, 1.25rem);
+  --font-size-lg: clamp(1.25rem, 2vw, 1.5rem);
+  --font-size-xl: clamp(1.5rem, 2.5vw, 2rem);
+
+  --line-height-sm: 1.2;
+  --line-height-md: 1.5;
+  --line-height-lg: 1.75;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Espaçamentos (8px scale) */
+  --spacing-xxs: 0.125rem; /* 2px */
+  --spacing-xs: 0.25rem; /* 4px */
+  --spacing-sm: 0.5rem; /* 8px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2rem; /* 32px */
+  --spacing-xxl: 3rem; /* 48px */
+  --spacing-xxxl: 4rem; /* 64px */
+
+  /* Border Radius */
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 1rem;
+  --radius-pill: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
+  --shadow-neon: 0 0 8px oklch(0.74 0.09 184 / 0.4);
+
+  /* Opacidade */
+  --opacity-disabled: 0.4;
+  --opacity-muted: 0.6;
+  --opacity-overlay: 0.8;
+
+  /* Motion */
+  --motion-fast: 150ms ease-in-out;
+  --motion-normal: 300ms ease;
+  --motion-slow: 500ms ease;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: --color-text;
+    --foreground: --color-surface;
   }
 }
 
@@ -23,4 +96,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+#__next {
 }
